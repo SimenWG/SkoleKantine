@@ -10,6 +10,8 @@ body {
 
   
 
+
+  
 .header_section {
     padding: 15px 0;
     background-color: rgba(0, 0, 0, 0.4);
@@ -41,6 +43,8 @@ body {
   .user_option .user_link {
     color: #ffffff;
   }
+
+  
   
   .user_option .user_link:hover {
     color: #a1e6ff;
@@ -106,7 +110,7 @@ form button {
     display: block;
     width: 100%;
     padding: 12px;
-    background: #d4a25a;
+    background: #13475a;
     color: #ffffff;
     font-size: 18px;
     font-weight: bold;
@@ -117,26 +121,5 @@ form button {
 }
 
 form button:hover {
-    background: #b9894d;
+    background: #a1e6ff;
 }
-
-/* Footer Section */
-footer {
-    background: #333333;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-}
-
-footer a {
-    color: #d4a25a;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #b9894d;
-    text-decoration: underline;
-}
-
-  

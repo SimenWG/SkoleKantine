@@ -40,7 +40,7 @@ document.getElementById("logBtn").addEventListener("click", async (event) => {
       // Validate credentials
       if (email === adminData.dbemail && password === adminData.dbpassword) {
         // Redirect to the desired page
-        window.location.href = "redigervarer.html";
+        window.location.href = "profil.html";
       } else {
         alert("Invalid email or password. Please try again.");
       }

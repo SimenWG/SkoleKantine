@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=VT323&display=swap');
+
+body {
+  font-family: "EB Garamond", serif;
+  color: #333333;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.hero_area {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.bg-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg-box img {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.header_section {
+  padding: 15px 0;
+}
+
+.navbar-brand span {
+  font-weight: bold;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.custom_nav-container .navbar-nav .nav-item .nav-link {
+  padding: 5px 20px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.custom_nav-container .navbar-nav .nav-item:hover .nav-link, 
+.custom_nav-container .navbar-nav .nav-item.active .nav-link {
+  color: #a1e6ff;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.menu-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.menu-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #333333;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  border-bottom: 2px solid #d4a25a;
+}
+
+
+.menu-description {
+  font-size: 18px;
+  font-weight: 800;
+  color: #333333;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.parentL {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 5rem;
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 3rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.matL h3, .drikkeL h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #333333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #d4a25a;
+  padding-bottom: 10px;
+}
+
+.matL li, .drikkeL li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #444444;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 5px 0;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.matL li:hover, .drikkeL li:hover {
+  color: #222222;
+}
+
+.matL li span, .drikkeL li span {
+  margin-left: 35px;
+  font-weight: 700;
+  font-size: 18px;
+  background: linear-gradient(to right, #d4a25a, #c79648, #b2853a);
+  background-clip: text;
+  color: transparent;
+  transition: background 0.3s ease;
+}
+
+.matL li span:hover, .drikkeL li span:hover {
+  background: linear-gradient(to right, #e0b874, #d6a760, #c3963f);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1024px) {
+  .menu-title {
+    font-size: 28px;
+    padding: 8px 16px;
+  }
+  
+  .menu-description {
+    font-size: 16px;
+    padding: 0 1rem;
+  }
+  
+  .parentL {
+    gap: 3rem;
+    max-width: 90%;
+    padding: 2rem;
+  }
+  
+  .matL h3, .drikkeL h3 {
+    font-size: 22px;
+  }
+  
+  .matL li, .drikkeL li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand span {
+    font-size: 28px;
+  }
+
+  .menu-title {
+    font-size: 26px;
+    padding: 6px 12px;
+  }
+
+  .menu-description {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .parentL {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .matL h3, .drikkeL h3 {
+    font-size: 20px;
+  }
+  
+  .matL li, .drikkeL li {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand span {
+    font-size: 24px;
+  }
+
+  .menu-title {
+    font-size: 22px;
+    padding: 5px 10px;
+  }
+
+  .menu-description {
+    font-size: 14px;
+    padding: 0 1rem;
+  }
+
+  .parentL {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .matL h3, .drikkeL h3 {
+    font-size: 18px;
+  }
+  
+  .matL li, .drikkeL li {
+    font-size: 14px;
+  }
+  
+  .matL li span, .drikkeL li span {
+    font-size: 14px;
+  }
+}
