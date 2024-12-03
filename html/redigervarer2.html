@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="shortcut icon" href="../images/favicon.png" type="">
+    <title> Røyken VGS </title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <link href="../css/redigerevarer2.css" rel="stylesheet" />
+    <link href=".//css/responsive.css" rel="stylesheet" />
+</head>
+<header class="header_section">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="../index.html">
+                <span>Matfikseren</span>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Hjemmeside</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Meny</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Ukas Meny</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="redigervarer2.html">Rediger Varer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Logg Inn</a>
+                    </li>
+                </ul>
+                <div class="user_option">
+                    <a href="" class="user_link">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
+                    <form class="form-inline">
+                        <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <h1>Legg til varer i Ukens Meny</h1>
+    <form id="add-item-form">
+        <label for="item-name">Navn på vare:</label>
+        <input type="text" id="item-name" placeholder="Navn på vare" required><br>
+
+        <label for="item-price">Pris (kr):</label>
+        <input type="number" id="item-price" placeholder="Pris" required><br>
+
+        <label for="item-description">Beskrivelse:</label>
+        <textarea id="item-description" placeholder="Beskrivelse" required></textarea><br>
+
+        <label for="item-type">Type:</label>
+        <select id="item-type" required>
+            <option value="Matvarer">Matvarer</option>
+            <option value="Drikkevarer">Drikkevarer</option>
+        </select><br>
+
+        <button type="submit">Legg til vare</button>
+    </form>
+
+    <script type="module">
+        // import { db } from "../js/firebaseauth.js";  // Sjekk den linjen
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDlH28I6UNHypJYCRzwRCB8CDHsFDDqTt4",
+            authDomain: "login-fbb0b.firebaseapp.com",
+            projectId: "login-fbb0b",
+            storageBucket: "login-fbb0b.firebasestorage.app",
+            messagingSenderId: "1086733044139",
+            appId: "1:1086733044139:web:e7d2bd8bcf63a6633faaee",
+            measurementId: "G-03MPBGZBF8"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.getElementById("add-item-form").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById("item-name").value;
+            const price = parseFloat(document.getElementById("item-price").value);
+            const description = document.getElementById("item-description").value;
+            const type = document.getElementById("item-type").value;
+
+            if (!name || isNaN(price) || !description || !type) {
+                alert("Alle feltene må fylles ut!");
+                return;
+            }
+
+            try {
+                await addDoc(collection(db, "Ukensmeny"), {
+                    name,
+                    price,
+                    description,
+                    type,
+                    timestamp: new Date(),
+                });
+                alert("Varen ble lagt til!");
+                document.getElementById("add-item-form").reset();
+            } catch (error) {
+                console.error("Feil under lagring:", error);
+                alert("Kunne ikke lagre varen. Prøv igjen.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
