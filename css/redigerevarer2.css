@@ -1,30 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,0..800;1,400..800&display=swap');
 
 body {
-    font-family: "EB Garamond", serif; /* Consistent font across all pages */
+    font-family: "EB Garamond", serif;
     color: #333333;
-    background-color: #ffffff;
-    overflow-x: hidden;
+    background-color: #f7f7f7;
     margin: 0;
-  }
+}
 
-  
-
-
-  
 .header_section {
     padding: 15px 0;
     background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .navbar-brand span {
-    font-family: "EB Garamond", serif; /* Ensure consistency for the navbar title */
+}
+
+.navbar-brand span {
+    font-family: "EB Garamond", serif;
     font-weight: bold;
     font-size: 32px;
     color: #ffffff;
-  }
+}
 
-  .custom_nav-container .navbar-nav .nav-item .nav-link {
+.custom_nav-container .navbar-nav .nav-item .nav-link {
     font-family: "EB Garamond", serif;
     padding: 5px 20px;
     color: #ffffff;
@@ -32,48 +27,47 @@ body {
     text-transform: uppercase;
     border-radius: 5px;
     transition: all 0.3s;
-  }
-  
-  .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
-  .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+}
+
+.custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+.custom_nav-container .navbar-nav .nav-item.active .nav-link {
     color: #a1e6ff;
     background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .user_option .user_link {
-    color: #ffffff;
-  }
+}
 
-  
-  
-  .user_option .user_link:hover {
-    color: #a1e6ff;
-  }
-  
-  .nav_search-btn {
-    background: none;
-    border: none;
+.user_option .user_link {
     color: #ffffff;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .nav_search-btn:hover {
-    color: #a1e6ff;
-  }
+}
 
-  form {
-    max-width: 600px;
+.user_option .user_link:hover {
+    color: #a1e6ff;
+}
+
+.forms-container {
+    display: flex;
+    justify-content: center; /* Sentere skjemaene horisontalt */
+    align-items: flex-start; /* Sørge for at de ikke er helt på bunnen */
     margin: 50px auto;
-    padding: 20px;
+    max-width: 1200px;
+}
+
+form {
+    width: 45%;
+    margin: 20px;
+    padding: 25px;
     background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+form:hover {
+    transform: translateY(-5px); /* Gir en liten hevingseffekt når musen er over skjemaet */
 }
 
 form h1 {
     text-align: center;
-    font-size: 28px;
+    font-size: 26px;
     color: #444444;
     margin-bottom: 20px;
 }
@@ -89,7 +83,7 @@ form input,
 form textarea,
 form select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #cccccc;
     border-radius: 5px;
@@ -105,7 +99,6 @@ form select:focus {
     box-shadow: 0 0 5px rgba(212, 162, 90, 0.5);
 }
 
-/* Button Styling */
 form button {
     display: block;
     width: 100%;
@@ -123,3 +116,132 @@ form button {
 form button:hover {
     background: #a1e6ff;
 }
+
+/* Media Queries for Responsive Redigere Varer Page */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .custom_nav-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar-brand span {
+      font-size: 28px;
+    }
+  
+    .custom_nav-container .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .forms-container {
+      flex-direction: column;
+      max-width: 90%;
+      margin: 30px auto;
+    }
+  
+    form {
+      width: 90%;
+      margin: 15px 0;
+    }
+  
+    form h1 {
+      font-size: 22px;
+    }
+  
+    form label {
+      font-size: 14px;
+    }
+  
+    form input,
+    form textarea,
+    form select {
+      font-size: 14px;
+    }
+  
+    form button {
+      font-size: 16px;
+    }
+  }
+  
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .custom_nav-container .navbar-nav {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      text-align: center;
+    }
+  
+    .custom_nav-container .navbar-nav.active {
+      display: flex;
+    }
+  
+    .navbar-toggler {
+      display: block;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  
+    .forms-container {
+      margin: 20px auto;
+    }
+  
+    form {
+      width: 95%;
+    }
+  
+    form h1 {
+      font-size: 20px;
+    }
+  
+    form label {
+      font-size: 12px;
+    }
+  
+    form input,
+    form textarea,
+    form select {
+      font-size: 12px;
+    }
+  
+    form button {
+      font-size: 14px;
+    }
+  }
+  
+  /* Small Mobile View */
+  @media (max-width: 480px) {
+    .navbar-brand span {
+      font-size: 20px;
+    }
+  
+    .forms-container {
+      margin: 15px auto;
+    }
+  
+    form h1 {
+      font-size: 18px;
+    }
+  
+    form label {
+      font-size: 10px;
+    }
+  
+    form input,
+    form textarea,
+    form select {
+      font-size: 10px;
+    }
+  
+    form button {
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+  

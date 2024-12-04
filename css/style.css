@@ -1013,3 +1013,123 @@ a:focus {
 .footer_section .footer-info p a {
   color: inherit;
 }
+
+/* Media Queries for Responsive Style.css */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .custom_nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-brand span {
+    font-size: 28px;
+  }
+
+  .custom_nav-container .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slider_section .detail-box {
+    width: 80%;
+    margin-bottom: 100px;
+  }
+
+  .offer_section .box {
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .offer_section .box .img-box {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .footer_section h4,
+  .footer_section .footer-logo {
+    font-size: 26px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .custom_nav-container .navbar-nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    text-align: center;
+  }
+
+  .custom_nav-container .navbar-nav.active {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .slider_section .detail-box {
+    margin-bottom: 50px;
+    width: 90%;
+  }
+
+  .offer_section .box {
+    padding: 15px;
+  }
+
+  .offer_section .box .img-box {
+    width: 150px;
+    height: 150px;
+  }
+
+  .offer_section .box .detail-box h5 {
+    font-size: 20px;
+  }
+
+  .footer_section h4,
+  .footer_section .footer-logo {
+    font-size: 22px;
+  }
+}
+
+/* Small Mobile View */
+@media (max-width: 480px) {
+  .navbar-brand span {
+    font-size: 20px;
+  }
+
+  .slider_section .detail-box h1 {
+    font-size: 2.5rem;
+  }
+
+  .offer_section .box .img-box {
+    width: 120px;
+    height: 120px;
+  }
+
+  .offer_section .box .detail-box h5 {
+    font-size: 18px;
+  }
+
+  .footer_section {
+    padding: 50px 0 30px 0;
+  }
+
+  .footer_section h4,
+  .footer_section .footer-logo {
+    font-size: 18px;
+  }
+
+  .footer_section p {
+    font-size: 14px;
+  }
+}

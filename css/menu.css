@@ -151,92 +151,130 @@ li {
   letter-spacing: 0.5px;
 }
 
+/* Media Queries for Responsive Design */
+
+/* Tablet View */
 @media (max-width: 1024px) {
+  .custom_nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-brand span {
+    font-size: 28px;
+  }
+
+  .custom_nav-container .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .menu-title {
     font-size: 28px;
     padding: 8px 16px;
   }
-  
+
   .menu-description {
     font-size: 16px;
-    padding: 0 1rem;
+    max-width: 80%;
+    margin: 0 auto 1.5rem;
   }
-  
+
   .parentL {
     gap: 3rem;
-    max-width: 90%;
     padding: 2rem;
+    max-width: 90%;
   }
-  
+
   .matL h3, .drikkeL h3 {
     font-size: 22px;
   }
-  
+
   .matL li, .drikkeL li {
     font-size: 16px;
   }
 }
 
+/* Mobile View */
 @media (max-width: 768px) {
-  .navbar-brand span {
-    font-size: 28px;
+  .custom_nav-container .navbar-nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    text-align: center;
+  }
+
+  .custom_nav-container .navbar-nav.active {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
   }
 
   .menu-title {
-    font-size: 26px;
+    font-size: 24px;
     padding: 6px 12px;
   }
 
   .menu-description {
-    font-size: 15px;
+    font-size: 14px;
     max-width: 100%;
+    margin: 0 auto 1rem;
   }
 
   .parentL {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .matL h3, .drikkeL h3 {
     font-size: 20px;
   }
-  
+
   .matL li, .drikkeL li {
     font-size: 15px;
   }
+
+  .matL li span, .drikkeL li span {
+    font-size: 14px;
+  }
 }
 
+/* Small Mobile View */
 @media (max-width: 480px) {
   .navbar-brand span {
     font-size: 24px;
   }
 
   .menu-title {
-    font-size: 22px;
+    font-size: 20px;
     padding: 5px 10px;
   }
 
   .menu-description {
-    font-size: 14px;
-    padding: 0 1rem;
+    font-size: 12px;
+    padding: 0 10px;
   }
 
   .parentL {
-    width: 100%;
-    padding: 1.5rem;
+    padding: 1rem;
+    gap: 1rem;
   }
 
   .matL h3, .drikkeL h3 {
     font-size: 18px;
   }
-  
+
   .matL li, .drikkeL li {
-    font-size: 14px;
-  }
-  
-  .matL li span, .drikkeL li span {
     font-size: 14px;
   }
 }

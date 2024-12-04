@@ -120,3 +120,112 @@ body {
   padding: 5px 0;
   border-bottom: 1px dashed #e0e0e0;
 }
+
+/* Media Query for Responsive Navbar and Layout */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .custom_nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-brand span {
+    font-size: 28px;
+  }
+
+  .custom_nav-container .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom_nav-container .navbar-nav .nav-item {
+    margin: 5px 0;
+  }
+
+  .menu-title {
+    font-size: 28px;
+  }
+
+  .menu-description {
+    font-size: 16px;
+  }
+
+  .parentL {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .custom_nav-container .navbar-nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    text-align: center;
+  }
+
+  .custom_nav-container .navbar-nav.active {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .menu-title {
+    font-size: 24px;
+  }
+
+  .menu-description {
+    font-size: 14px;
+  }
+
+  .parentL {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .matL h3, .drikkeL h3 {
+    font-size: 20px;
+  }
+
+  .matL li, .drikkeL li {
+    font-size: 16px;
+  }
+}
+
+/* Small Mobile View */
+@media (max-width: 480px) {
+  .navbar-brand span {
+    font-size: 20px;
+  }
+
+  .menu-title {
+    font-size: 20px;
+  }
+
+  .menu-description {
+    font-size: 12px;
+  }
+
+  .parentL {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .matL h3, .drikkeL h3 {
+    font-size: 18px;
+  }
+
+  .matL li, .drikkeL li {
+    font-size: 14px;
+  }
+}
